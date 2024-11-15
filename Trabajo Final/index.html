@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <!-- Metadatos básicos del documento -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Enlace al archivo CSS externo -->
+  <link rel="stylesheet" href="styles.css">
+  <!-- Título de la página, se muestra en la pestaña del navegador -->
+  <title>Contador de Calorías</title>
+</head>
+
+<body>
+  <main>
+    <!-- Título principal de la aplicación -->
+    <h1>Contador de Calorías</h1>
+
+    <!-- Contenedor principal de la aplicación -->
+    <div class="container">
+      <!-- Formulario para el contador de calorías -->
+      <form id="calorie-counter">
+
+        <!-- Entrada para el presupuesto diario de calorías -->
+        <label for="budget">Presupuesto diario:</label>
+        <input type="number" min="0" id="budget" placeholder="Ingrese su presupuesto diario de calorías" required />
+
+        <!-- Sección de desayuno -->
+        <fieldset id="breakfast">
+          <legend>Desayuno</legend>
+          <!-- Contenedor para las entradas de desayuno -->
+          <div class="input-container"></div>
+        </fieldset>
+
+        <!-- Sección de almuerzo -->
+        <fieldset id="lunch">
+          <legend>Almuerzo</legend>
+          <!-- Contenedor para las entradas de almuerzo -->
+          <div class="input-container"></div>
+        </fieldset>
+
+        <!-- Sección de cena -->
+        <fieldset id="dinner">
+          <legend>Cena</legend>
+          <!-- Contenedor para las entradas de cena -->
+          <div class="input-container"></div>
+        </fieldset>
+
+        <!-- Sección de meriendas -->
+        <fieldset id="snacks">
+          <legend>Meriendas</legend>
+          <!-- Contenedor para las entradas de meriendas -->
+          <div class="input-container"></div>
+        </fieldset>
+
+        <!-- Sección de ejercicio (para restar calorías) -->
+        <fieldset id="exercise">
+          <legend>Ejercicio</legend>
+          <!-- Contenedor para las entradas de ejercicio -->
+          <div class="input-container"></div>
+        </fieldset>
+
+        <!-- Controles para agregar entradas de comida o ejercicio -->
+        <div class="controls">
+          <span>
+            <label for="entry-dropdown">Agregar comida o ejercicio:</label>
+            <!-- Menú desplegable para seleccionar el tipo de entrada (comida o ejercicio) -->
+            <select id="entry-dropdown">
+              <option value="breakfast" selected>Desayuno</option>
+              <option value="lunch">Almuerzo</option>
+              <option value="dinner">Cena</option>
+              <option value="snacks">Meriendas</option>
+              <option value="exercise">Ejercicio</option>
+            </select>
+          </span>
+          <!-- Botón para agregar la entrada seleccionada -->
+          <button type="button" id="add-entry">Agregar entrada</button>
+        </div>
+
+        <!-- Botones de acción para calcular calorías restantes o limpiar el formulario -->
+        <div>
+          <button type="submit">Calcular calorías restantes</button>
+          <button type="button" id="clear">Limpiar</button>
+        </div>
+      </form>
+
+      <!-- Sección de salida donde se mostrarán los resultados -->
+      <div id="output" class="output hide"></div>
+    </div>
+  </main>
+
+  <!-- Enlace al archivo JavaScript externo que controla la lógica de la aplicación -->
+  <script src="script.js"></script>
+</body>
+
+</html>
